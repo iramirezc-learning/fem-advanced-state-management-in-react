@@ -5,6 +5,7 @@ import { toggleItem, removeItem } from '../actions/items-actions'
 
 const mapStateToProps = ({ items, filter }) => {
   const searchTerm = filter.packedItemsFilter;
+
   return {
     title: 'Packed Items',
     items: items.filter(item => item.packed && item.value.toLowerCase().includes(searchTerm.toLowerCase())),
