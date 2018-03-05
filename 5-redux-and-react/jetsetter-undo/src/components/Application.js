@@ -1,6 +1,7 @@
 import React from 'react';
 
 import CountDown from './CountDown';
+import UndoRedoContainer from '../containers/UndoRedoContainer'
 import MarkAllAsUnpackedContainer from '../containers/MarkAllAsUnpackedContainer'
 import NewItemContainer from '../containers/NewItemContainer'
 import PackedFilterContainer from '../containers/PackedFilterContainer'
@@ -13,6 +14,7 @@ import './Application.css';
 function Application() {
   return (
     <div className="Application">
+      <UndoRedoContainer />
       <NewItemContainer />
       <CountDown />
       <UnpackedItemsContainer render={<UnpackedFilterContainer />} />

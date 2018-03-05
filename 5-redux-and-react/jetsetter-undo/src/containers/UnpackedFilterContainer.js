@@ -4,9 +4,9 @@ import Filter from '../components/Filter'
 import { updateUnpackedItemsFilter } from '../actions/filter-actions'
 
 
-const mapStateToProps = ({ filter }) => {
+const mapStateToProps = ({ currentState }) => {
   return {
-    searchTerm: filter.unpackedItemsFilter
+    searchTerm: currentState.filter.unpackedItemsFilter
   }
 }
 

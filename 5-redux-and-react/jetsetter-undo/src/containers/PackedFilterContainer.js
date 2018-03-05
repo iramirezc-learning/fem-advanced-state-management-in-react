@@ -4,9 +4,9 @@ import Filter from '../components/Filter'
 import { updatePackedItemsFilter } from '../actions/filter-actions'
 
 
-const mapStateToProps = ({ filter }) => {
+const mapStateToProps = ({ currentState }) => {
   return {
-    searchTerm: filter.packedItemsFilter
+    searchTerm: currentState.filter.packedItemsFilter
   }
 }
 

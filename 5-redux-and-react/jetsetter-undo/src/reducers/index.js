@@ -1,11 +1,3 @@
-import { combineReducers } from 'redux';
+import appReducer from './app-reducer';
 
-import filter from './filter-reducer';
-import items from './items-reducer';
-import newItemValue from './new-item-reducer';
-
-export default combineReducers({
-  filter,
-  items,
-  newItemValue,
-});
+export default appReducer

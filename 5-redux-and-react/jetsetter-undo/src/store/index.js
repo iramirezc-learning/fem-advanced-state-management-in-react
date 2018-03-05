@@ -2,9 +2,9 @@ import { applyMiddleware, compose, createStore } from 'redux';
 
 import reducers from '../reducers';
 import initialState from './initial-state';
+import logger from '../middlewares/logger';
 
-
-const middleware = [];
+const middleware = [logger];
 const enhancers = [];
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

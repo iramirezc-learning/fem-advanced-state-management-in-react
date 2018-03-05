@@ -15,10 +15,16 @@ const items = [
 ];
 
 export default {
-  items,
-  filter: {
-    packedItemsFilter: '',
-    unpackedItemsFilter: '',
+  currentState: {
+    items,
+    filter: {
+      packedItemsFilter: '',
+      unpackedItemsFilter: '',
+    },
+    newItemValue: ''
   },
-  newItemValue: '',
+  history: {
+    past: [],
+    future: []
+  }
 };

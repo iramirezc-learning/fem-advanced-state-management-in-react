@@ -4,9 +4,9 @@ import NewItem from '../components/NewItem'
 import { addNewItem } from '../actions/items-actions'
 import { updateNewItemValue } from '../actions/new-item-actions'
 
-const mapStateToProps = ({ newItemValue }) => {
+const mapStateToProps = ({ currentState }) => {
   return {
-    value: newItemValue
+    value: currentState.newItemValue
   }
 }
 
