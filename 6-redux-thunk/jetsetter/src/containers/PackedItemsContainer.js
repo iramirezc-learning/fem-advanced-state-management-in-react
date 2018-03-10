@@ -14,11 +14,11 @@ const mapStateToProps = ({ items, filter }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onCheckOff({id}) {
-      dispatch(toggleItem(id))
+    onCheckOff(item) {
+      dispatch(toggleItem(item))
     },
-    onRemove({id}) {
-      dispatch(removeItem(id))
+    onRemove(item) {
+      dispatch(removeItem(item))
     }
   }
 }
