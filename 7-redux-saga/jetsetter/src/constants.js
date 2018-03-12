@@ -3,7 +3,9 @@ export const UPDATE_PACKED_ITEMS_FILTER = 'UPDATE_PACKED_ITEMS_FILTER';
 
 export const UPDATE_NEW_ITEM_VALUE = 'UPDATE_NEW_ITEM_VALUE';
 
-export const LOAD_ITEMS = 'LOAD_ITEMS';
+export const FETCH_ITEMS = 'FETCH_ITEMS';
+export const UPDATE_ALL_ITEMS = 'UPDATE_ALL_ITEMS';
+export const SAVE_NEW_ITEM = 'SAVE_NEW_ITEM';
 export const ADD_NEW_ITEM = 'ADD_NEW_ITEM';
 export const REMOVE_ITEM = 'REMOVE_ITEM';
 export const TOGGLE_ITEM = 'TOGGLE_ITEM';

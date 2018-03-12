@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
 import NewItem from '../components/NewItem'
-import { addNewItem } from '../actions/items-actions'
+import { saveNewItem } from '../actions/items-actions'
 import { updateNewItemValue } from '../actions/new-item-actions'
 
 const mapStateToProps = ({ newItemValue }) => {
@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(updateNewItemValue(value))
     },
     onSubmit(value) {
-      dispatch(addNewItem(value))
+      dispatch(saveNewItem(value))
     }
   }
 }

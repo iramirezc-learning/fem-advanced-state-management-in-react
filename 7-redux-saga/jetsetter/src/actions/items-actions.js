@@ -1,42 +1,38 @@
-import { LOAD_ITEMS, ADD_NEW_ITEM, REMOVE_ITEM, TOGGLE_ITEM, MARK_ALL_AS_UNPACKED } from '../constants';
+import { FETCH_ITEMS, UPDATE_ALL_ITEMS, SAVE_NEW_ITEM, ADD_NEW_ITEM, REMOVE_ITEM, TOGGLE_ITEM, MARK_ALL_AS_UNPACKED } from '../constants';
 import Api from '../lib/api';
 
-export const getAllItems = () => {
-  return (dispatch) => {
-    console.log('geting all items...');
-
-    Api
-      .getAll()
-      .then(items => {
-        console.log({ items })
-        dispatch({
-          type: LOAD_ITEMS,
-          items
-        })
-      })
-      .catch(e => console.log({e}))
+/* intercepted by sagas */
+export const fetchItems = () => {
+  return {
+    type: FETCH_ITEMS
   }
 }
 
-export const addNewItem = (value) => {
-  return (dispatch) => {
-    const item = {
-      packed: false,
-      value
-    }
-
-    Api
-      .add(item)
-      .then(item => {
-        console.log({ item });
-        dispatch({
-          type: ADD_NEW_ITEM,
-          item,
-        })
-      })
+/* dispatched by sagas */
+export const updateAllItems = (items) => {
+  return {
+    type: UPDATE_ALL_ITEMS,
+    items
   }
 }
 
+/* intercepted by sagas */
+export const saveNewItem = (value) => {
+  return {
+    type: SAVE_NEW_ITEM,
+    value
+  }
+}
+
+/* dispatched by sagas */
+export const addNewItem = (item) => {
+  return {
+    type: ADD_NEW_ITEM,
+    item,
+  };
+}
+
+/* thunk */
 export const toggleItem = (item) => {
   return (dispatch) => {
     console.log('updating item...', item)
@@ -54,6 +50,7 @@ export const toggleItem = (item) => {
   }
 };
 
+/* thunk */
 export const removeItem = (item) => {
   return (dispatch) => {
     Api
@@ -67,6 +64,7 @@ export const removeItem = (item) => {
   }
 }
 
+/* thunk */
 export const markAllAsUnpacked = () => {
   return (dispatch) => {
     Api
