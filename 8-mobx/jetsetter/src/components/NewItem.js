@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import uniqueId from 'lodash/uniqueId';
-
 import { inject } from 'mobx-react';
 
 import './NewItem.css';

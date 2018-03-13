@@ -3,8 +3,10 @@ import Item from './item';
 
 export default class ItemList {
   @observable items = [];
-  @observable unpackedItemsFilter = '';
-  @observable packedItemsFilter = '';
+  @observable searchFilter = {
+    packedItems: '',
+    unpackedItems: ''
+  }
 
   @computed
   get packedItems() {
@@ -19,14 +21,14 @@ export default class ItemList {
   @computed
   get filteredUnpackedList() {
     return this.unpackedItems.filter(item =>
-      item.value.includes(this.unpackedItemsFilter),
+      item.value.includes(this.searchFilter.unpackedItems),
     );
   }
 
   @computed
-  get filteredpackedList() {
+  get filteredPackedList() {
     return this.packedItems.filter(item =>
-      item.value.includes(this.packedItemsFilter),
+      item.value.includes(this.searchFilter.packedItems),
     );
   }
 
@@ -41,10 +43,14 @@ export default class ItemList {
   }
 
   @action.bound updatePackedItemsFilter(value) {
-    this.packedItemsFilter = value;
+    this.searchFilter.packedItems = value;
   }
 
   @action.bound updateUnpackedItemsFilter(value) {
-    this.unpackedItemsFilter = value;
+    this.searchFilter.unpackedItems = value;
+  }
+
+  @action.bound markAllAsUnpacked () {
+    this.items.forEach(i => i.packed = false);
   }
 }

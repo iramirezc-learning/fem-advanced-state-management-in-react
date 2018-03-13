@@ -11,6 +11,7 @@ class Filter extends Component {
 
   render() {
     const { searchTerm } = this.props;
+
     return (
       <input
         className="Items-searchTerm"
